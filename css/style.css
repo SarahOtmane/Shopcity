@@ -1,0 +1,1365 @@
+@charset "UTF-8";
+
+/*-----------------------------------------------
+    
+       ********** Table of Contents **********
+
+01. =google fonts
+02. =variables
+03. =base
+
+        la page: index
+
+04. =header
+05. =inscris dernierement
+06. =specialite
+07. =envie
+08. =decouvertes
+09. =engagement
+10. =footer
+
+        la page: details
+
+11. =header de la page details
+12. =details_magasin
+13. =offre du moment
+14. =image_background
+15. =les_produits
+
+        la page: produit_det
+
+16. =header de la page produit
+17. =bar
+18. =idee
+19. =engagement
+
+        la page: connexion
+
+20. =client
+-----------------------------------------------*/
+
+
+
+/* ---------------------------- 
+        01 := google fonts 
+---------------------------- */
+@font-face {
+    font-family: 'baloo_thambi_2';
+    src: url('fonts/baloo/baloothambi2-variablefont_wght-webfont.eot');
+    src: url('fonts/baloo/baloothambi2-variablefont_wght-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/baloo/baloothambi2-variablefont_wght-webfont.woff2') format('woff2'),
+         url('fonts/baloo/baloothambi2-variablefont_wght-webfont.woff') format('woff'),
+         url('fonts/baloo/baloothambi2-variablefont_wght-webfont.ttf') format('truetype'),
+         url('fonts/baloo/baloothambi2-variablefont_wght-webfont.svg#baloo_thambi_2regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'red_hat_display';
+    src: url('fonts/red/redhatdisplay-variablefont_wght-webfont.eot');
+    src: url('fonts/red/redhatdisplay-variablefont_wght-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/red/redhatdisplay-variablefont_wght-webfont.woff2') format('woff2'),
+         url('fonts/red/redhatdisplay-variablefont_wght-webfont.woff') format('woff'),
+         url('fonts/red/redhatdisplay-variablefont_wght-webfont.ttf') format('truetype'),
+         url('fonts/red/redhatdisplay-variablefont_wght-webfont.svg#red_hat_displayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/* ----------------------------
+        02 := variables
+---------------------------- */
+:root{
+    --bleu-fonce: #173156;
+    --noir: #000000;
+    --orange: #F28907;
+    --violet: #7135F2;
+    --bleu: #35C0F2;
+    --jaune: #FFE327;
+    --blanc: #FFFFFF;
+    --blanc_background: #F6F6F6;
+}
+
+
+/* ----------------------------
+        03 := base
+---------------------------- */
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    max-width: 576px;
+}
+
+*::-webkit-scrollbar {
+    width: 16px;
+}
+
+*{
+    scrollbar-width: auto;
+    scrollbar-color: var(--violet) var(--blanc);
+}
+
+*::-webkit-scrollbar {
+    width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--blanc);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--violet);
+    border-radius: 10px;
+    border: 3px solid var(--blanc);
+}
+
+#container, #container1{
+    max-width: 576px;
+    overflow-x: hidden;
+    font-family: 'baloo_thambi_2', sans-serif;
+    background-color: var(--blanc);
+}
+
+#container1{
+    background-color: var(--violet) !important;
+}
+
+header, main, footer{
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    width: max-content;
+    padding: .5rem;
+    cursor: pointer;
+}
+
+figure img{
+    width: 100%;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.overflow-x{
+    overflow-x: auto;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.b-bottom{
+    border-bottom: 1px solid rgba(23, 49, 86, .5);
+    padding-bottom: 3rem;
+}
+
+.shadow{
+    box-shadow: 2px 3px 7px 0px rgba(119, 119, 119, 0.72);
+    -moz-box-shadow: 2px 3px 7px 0px rgba(119, 119, 119, 0.72);
+    -webkit-box-shadow: 2px 3px 7px 0px rgba(119, 119, 119, 0.72);
+}
+
+
+
+/************************ PAGE 1 *************************/
+
+/* ----------------------------
+        04 := header
+---------------------------- */
+
+header, header article, header section{
+    width: 100%;
+    height: max-content;
+}
+
+.une{
+    background-image: url(../images/background_noir.png), url(../images/maison1.jpg);
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+    height: 750px;
+}
+
+.navigation, .navigation1{
+    width: 25%;
+    display: block;
+    margin-top: 4%; 
+    margin-left: 4%;
+    z-index: 1;   
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.navigation input, .navigation1 input{
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0; 
+    z-index: 2; 
+    -webkit-touch-callout: none;
+}
+
+.navigation span, .navigation1 span{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: var(--blanc);
+    border-radius: 3px; 
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+}
+
+.navigation span:first-child, .navigation1 span:first-child{
+    transform-origin: 0% 0%;
+}
+
+.navigation span:nth-last-child(2), .navigation1 span:nth-last-child(2){
+    transform-origin: 0% 100%;
+}
+
+.navigation input:checked ~ span, .navigation1 input:checked ~ span{
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: var(--bleu-fonce);
+}
+
+.navigation input:checked ~ span:nth-last-child(3), .navigation1 input:checked ~ span:nth-last-child(3){
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.navigation input:checked ~ span:nth-last-child(2), .navigation1 input:checked ~ span:nth-last-child(2){
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+.navigation ul, .navigation1 ul{
+    position: absolute;
+    width: max-content;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background: var(--blanc);
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}   
+
+.navigation ul li, .navigation1 ul li{
+    padding: 10px 0;
+}
+
+.navigation input:checked ~ ul, .navigation1 input:checked ~ ul{
+    transform: none;
+}
+
+.navigation ul li a{
+    color: var(--bleu-fonce);
+}
+
+.logo, .logo1{
+    width: 41%;
+}
+
+.logo img, .logo1 img{
+    width: 100%;
+}
+
+.logo + a, .logo1 + a, .pannier{
+    display: block;
+    width: 30%;
+    font-size: 2.2rem;
+    color: var(--blanc);
+    margin-top: 2%;
+    display: flex;
+    justify-self: flex-end;
+    padding-right: 2%;
+}
+
+.logo + a, .logo1 + a{
+    padding-left: 15%;
+}
+
+.article2 h1{
+    margin-top: 41%;
+    color: #FFE327;
+    text-align: center;
+    font-size: 2.7rem;
+    font-weight: lighter;
+}
+
+.article2 h2{
+    margin-top: 6%;
+    text-align: center;
+    color: var(--blanc);
+    font-size: 1.1rem;
+    font-weight: lighter;
+}
+
+.location{
+    background-color: var(--jaune);
+    padding: 1rem;
+    margin-top: 4%;
+}
+
+.location input, .recherche input{
+    margin-left: 10px;
+    width: 95%;
+    background-color: var(--blanc);
+    border: 1px solid var(--blanc);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.location input::placeholder, .recherche input::placeholder{
+    color: var(--noir);
+    font-size: .9rem;
+}
+
+.location + i{
+    color: var(--bleu-fonce);
+    font-size: 1.9rem;
+    position: relative;
+    top: -13%;
+    left: 87%;
+}
+
+.recherche{
+    background-color: var(--bleu-fonce);
+    padding: 1rem;
+}
+
+.recherche + i{
+    color: var(--bleu-fonce);
+    font-size: 1.9rem;
+    position: relative;
+    top: -3.5rem;
+    left: 87%;
+}
+
+
+/* -----------------------------------
+        05 := inscris dernierement
+----------------------------------- */
+
+.inscris h2, .specialite h2{
+    margin-top: 2%;
+    margin-bottom: 5%;
+    margin-left: 1.5rem;
+    font-size: 2rem;
+}
+
+.inscris a{
+    color: var(--noir);
+}
+
+.inscris article{
+    scrollbar-color: var(--jaune) var(--blanc);
+}
+
+.inscris article::-webkit-scrollbar-thumb {
+    background-color: var(--jaune);
+}
+
+.cards{
+    background-color: var(--jaune);
+    margin-left: 1.5rem;
+    margin-right: .5rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+}
+
+.cards img{
+    border-radius: 1rem 1rem 0 0;
+    width: 15rem;
+    height: 170px;
+}
+
+.cards h3{
+    font-weight: lighter;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: .5rem;
+}
+
+.cards p{
+    margin-left: 1rem;
+    margin-top: .4rem;
+    margin-bottom: .8rem;
+}
+
+/* ----------------------------
+        06 := les specialies 
+---------------------------- */
+.specialite{
+    margin-top: 2rem;
+}
+
+.specialite article{
+    scrollbar-color: var(--bleu) var(--blanc);
+}
+
+.specialite article::-webkit-scrollbar-thumb {
+    background-color: var(--bleu);
+}
+
+.contenu section{
+    margin: 1rem .5rem 1rem 1rem;
+}
+
+.contenu h3{
+    font-size: 1.6rem;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.contenu article{
+    margin-top: 8%;
+    border-radius: 2.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.bleu{
+    background-color: var(--bleu);
+}
+
+.orange{
+    background-color: var(--orange);
+}
+
+.jaune{
+    background-color: var(--jaune);
+}
+
+.contenu figure{
+    width: 50%;
+    background-color: var(--blanc);
+    border-radius: 50%;
+    margin: 3rem;
+}
+
+.contenu figure img{
+    width: 5rem;
+}
+/* ----------------------------
+        07 := envie
+---------------------------- */
+.envie{
+    width: 100%;
+    align-items: center;
+    padding-top: 3.5rem;
+    padding-bottom: 6rem;
+}
+
+.violet{
+    background-color: var(--violet);
+    color: var(--blanc);
+    width: 70%;
+    height: 320px;
+    border-radius: 2.5rem;
+    padding: 1.5rem 0 0 0;
+}
+
+.violet h2, .violet p{
+    margin-left: 1rem;
+}
+
+.violet h2{
+    width: 100%;
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+}
+
+.violet p{
+    font-size: 1.2rem;
+}
+
+.violet p + p{
+    margin-bottom: 1.2rem;
+    margin-top: .6rem;
+}
+
+.gauche{
+    margin-left: 4%;
+    margin-right: 5%;
+}
+
+.droite{
+    margin-left: 5%;
+    margin-right: 4%;
+}
+
+.violet img{
+    border-radius: 0 0 2.5rem 2.5rem;
+}
+
+/* ----------------------------
+        08 := decouvertes
+---------------------------- */
+.decouverte, .offre{
+    padding-top: 2rem;
+    padding-left: .8rem;
+}
+
+.decouverte div{
+    scrollbar-color: var(--orange) var(--blanc);
+}
+
+.decouverte div::-webkit-scrollbar-thumb {
+    background-color: var(--orange);
+}
+
+.decouverte h2, .engagement h2, .offre h2{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    font-size: 2rem;
+    color: var(--bleu-fonce);
+}
+
+.ligne{
+    width: max-content;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.ligne section, .ligne .section{
+    background-color: var(--orange);
+    color: var(--blanc);
+    width: 250px;
+    height: 240px;
+    border-radius: 2.5rem;
+    margin-right: 2rem;
+}
+
+.ligne figure, .ligne figure img{
+    height: 165px;
+    width: 250px;
+    border-radius: 2.5rem 2.5rem 0 0;
+}
+
+.ligne p{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+/* ----------------------------
+        09 := engagement
+---------------------------- */
+.engagement{
+    margin-top: 4rem;
+    padding-left: 1.5rem;
+}
+
+.engagement article{
+    width: 90%;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    padding-left: .5rem;
+}
+
+.engagement figure{
+    width: 13%;
+    margin-left: .8rem;
+}
+
+.engagement p{
+    color: var(--bleu-fonce);
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+.pointeur{
+    width: 18% !important;
+    margin-left: 0!important;
+}
+
+/* ----------------------------
+        10 := footer
+---------------------------- */
+footer{
+    background-color: var(--noir);
+    color: var(--blanc);
+    margin-top: 5rem;
+}
+
+footer .logo{
+    width: 35%;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+.question{
+    width: 100%;
+    padding-left: .8rem;
+}
+
+.question article{
+    width: 90%;
+    padding-left: .5rem;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+    border-bottom: 1px solid var(--blanc);
+}
+
+.question p{
+    margin-top: 1rem;
+    font-size: 1.3rem;
+}
+
+.inscrire{
+    margin-top: 3rem;
+    align-items: center;
+}
+
+.inscrire h3{
+    font-size: 1.8rem;
+    font-weight: lighter;
+}
+
+.inscrire p{
+    font-size: 1.4rem;
+    margin-top: .5rem;
+}
+
+form{
+    width: 90%;
+    margin-top: .8rem;
+    margin-bottom: 2.4rem;
+}
+
+form input[type = email], form input[type = password]{
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1.2rem;
+}
+
+form input::placeholder{
+    text-align: center;
+    font-size: 1rem;
+}
+
+form article input{
+    margin-right: .5rem;
+   width: 1.8rem;
+}
+
+form article label{
+    font-size: 1.2rem;
+}
+
+form button{
+    align-self: center;
+    margin-top: 1.2rem;
+    width: 50%;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    color: var(--blanc);
+    background-color: var(--violet);
+}
+
+.reseaux{
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.3rem;
+}
+
+.reseaux span{
+    align-self: center;
+    font-size: 1rem;
+}
+
+.reseaux figure .fb{
+    width: 5rem;
+    height: 2.5rem;
+    margin-right: .5rem;
+}
+
+footer .fin{
+    text-align: center;
+    margin: 3rem 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************************ PAGE 2 *************************/
+
+/* ------------------------------------
+        11 := header page details
+------------------------------------ */
+.navigation1{
+    margin-bottom: 2.5rem;
+}
+
+.navigation1 span, .navigation1 ul{
+    background: var(--noir) !important;
+}
+
+.navigation1 input:checked ~ span{
+    background: var(--blanc) !important;
+}
+
+.navigation1 ul li a{
+    color: var(--blanc)!important;
+}
+
+.logo1 + a{
+    color: var(--noir) !important;
+}
+
+/* ------------------------------------
+        12 := details_magasin
+------------------------------------ */
+
+.retour{
+    width: max-content;
+    border: 2px solid var(--bleu-fonce);
+    background-color: var(--blanc);
+    border-radius: 1rem;
+    margin-left: 1rem;
+}
+
+.retour a, .retour a:hover, .retour a:visited{
+    color: var(--bleu-fonce);
+    font-size: 1.3rem;
+}
+
+.magasin{
+    margin: 3.5rem 1rem 1rem 1rem;
+    border-radius: 2rem;
+    color: var(--blanc);
+}
+
+.colegue, .avis{
+    background-color: var(--bleu-fonce);
+}
+
+.colegue, .colegue img{
+    border-radius: 2rem 2rem 0 0;
+}
+
+.avis{
+    font-size: 1.2rem;
+    padding: .5rem 1rem;
+    align-items: center;
+    width: 100%;
+}
+
+.avis i{
+    color: var(--jaune);
+    margin-left: .3rem;
+}
+
+.avis .livraison{
+    padding-left: 6%;
+}
+
+.rond{
+    margin-left: 4%;
+}
+
+.rond img{
+    border: 2px solid var(--blanc);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: .25rem;
+}
+
+.rond img + img, .media img + img{
+    margin-left: .4rem;
+}
+
+.media{
+    margin-left: 16%;
+}
+
+.media img{
+    width: 35px;
+    height: 40px;
+}
+
+.definition{
+    border-radius: 0 0 2rem 2rem;
+    background-color: var(--blanc_background);
+    color: var(--bleu-fonce);
+    padding: 2rem 1.7rem;
+}
+
+.definition h3{
+    font-size: 2rem;
+    font-weight: lighter;
+    margin-bottom: 1rem;
+}
+
+.renseignement{
+    width: 100%;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+
+.renseignement div{
+    width: 50%;
+}
+
+.renseignement .trait{
+    width: 0%;
+    border: 1px solid var(--bleu-fonce);
+    margin-right: 5%;
+}
+
+.renseignement .trait +div{
+    width: 41%;
+}
+
+.produits span{
+    display: block;
+    font-size: 1.25rem;
+    color: var(--blanc);
+    background-color: var(--orange);
+    width: max-content;
+    padding: .5rem;
+    border-radius: 2rem;
+    margin-right: .8rem;
+    margin-top: 2rem;
+}
+
+.produits span.last{
+    margin-right: 0;
+}
+
+.definition p{
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    border-top: 1px solid var(--bleu-fonce);
+    padding-top: 1.5rem;
+}
+
+
+/* ------------------------------------
+        13 := offre du moment
+------------------------------------ */
+.offre .ligne section, .offre .ligne .section{
+    background-color: var(--blanc_background);
+    color: var(--noir);
+    height: max-content;
+}
+
+.offre .ligne section p, .offre .ligne .section p{
+    padding-left: 1rem;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.prix{
+    width: 100%;
+    padding-left: 1rem;
+    margin-bottom: .2rem;
+}
+
+.prix span{
+    font-size: 1.4rem;
+    margin-top: 2.2rem;
+    font-weight: bolder;
+    width: 31%;
+}
+
+.prix span + span{
+    font-size: 1rem;
+    text-decoration: line-through;
+    margin-left: 4%;
+    margin-top: 2.5rem;
+    width: 21%;
+}
+
+.prix figure{
+    width: 35%;
+    margin-left: 5%;
+}
+
+.prix figure img{
+    width: 100%;
+}
+
+.prix figure, .prix figure img{
+    height: 5rem;
+}
+
+
+
+/* ------------------------------------
+        14 := image_background
+------------------------------------ */
+.image_background{
+    background-image: url(../images/poisson_joues.jpg);
+    width: 100%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 3rem 0;
+    color: var(--blanc);
+    padding-left: 1.5rem;
+    padding-top: 2.2rem;
+    font-size: 1.8rem;
+}
+
+.image_background p{
+    width: 70%;
+}
+
+.image_background p +p{
+    text-decoration: underline;
+    margin-top: .5rem;
+}
+
+
+/* ------------------------------------
+        15 := les_produits
+------------------------------------ */
+
+.liens{
+    font-size: 1.4rem;
+    border-top: 1.5px solid #BBBBBB;
+    border-bottom: 1.5px solid #BBBBBB;
+    padding: 2rem 0;
+    margin: 1rem 0 0;
+}
+
+.liens a{
+    color: var(--bleu-fonce);
+    margin: 0 .8rem;
+}
+
+.liens .first{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.les_produits .offre div{
+    width: 17.5rem !important;
+}
+
+.prod{
+    background-color: var(--blanc) !important;
+    margin-bottom: 1.5rem;
+}
+
+.prod + .prod{
+    margin-left: 1.5rem;
+}
+
+.prod .bleu{
+    background-color: var(--bleu);
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.prod .bleu, .prod .bleu img{
+    border-radius: 2rem;
+    height: 18rem;
+}
+
+.prod div{
+    background-color: var(--blanc_background);
+    width: max-content;
+}
+
+.prod p, .prod span{
+    font-size: 1.4rem !important;
+    padding-left: 1rem;
+    padding-right: .5rem;
+}
+
+.prod .prix span{
+    margin-top: 1rem;
+    width: max-content !important;
+    font-size: 1.7rem !important;
+    padding-left: 0;
+}
+
+.prod .prix figure{
+    width: 5rem;
+    position: relative;
+    left: 23%;
+    margin-top: 1rem;
+}
+
+.prod .prix figure img{
+    width: 100%;
+}
+
+.prod .prix figure, .prix figure img{
+    height: 5rem;
+}
+
+.les_produits button, .idee button, .accompagnement button{
+    align-self: center;
+    margin-top: 4rem;
+    width: max-content;
+    background-color: var(--violet);
+    border: 1px solid #707070;
+    border-radius: 1.5rem;
+    padding: 1rem 2.5rem;
+}
+
+.les_produits button a, .idee button a, .accompagnement button a{
+    color: var(--blanc);
+    font-size: 1.3rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************************ PAGE 3 *************************/
+
+/* ------------------------------------
+        16 := header_3
+------------------------------------ */
+.header_3{
+    background-color: var(--bleu-fonce);
+}
+
+.header_3 .article1{
+    height: max-content;
+}
+
+.recherche1{
+    margin-top: 1rem;
+    margin-left: -2rem;
+}
+
+.recherche1 input{
+    width: 100%;
+    background-color: var(--blanc);
+    border: 1px solid var(--blanc);
+    border-radius: 1rem;
+    padding: 1rem .5rem;
+}
+
+.recherche1 i{
+    color: var(--bleu-fonce);
+    font-size: 1.5rem;
+    position: relative;
+    top: -2.2rem;
+    left: 90%;
+}
+
+.recherche1 + a{
+    width: 14%;
+    margin-left: 3%;
+    margin-top: 1.3rem;
+}
+
+.header_3 .navigation{
+    margin-top: 2rem;
+}
+
+
+/* ------------------------------------
+        17 := bar
+------------------------------------ */
+
+.bar{
+    margin: 1.5rem;
+    color: var(--bleu-fonce);
+}
+
+.bar figure{
+    border-radius: 2rem;
+    width: 100%;
+    height: 42vh;
+    background-image: url(../images/bar_filet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 2rem;
+}
+
+.bar figure img{
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+    top: 70%;
+    left: 80%;
+}
+
+.bar h3{
+    margin-top: 3rem;
+    margin-bottom: 1.8rem;
+    font-size: 1.6rem;
+    font-weight: lighter;
+}
+
+.bar p{
+    font-size: 1.2rem;
+}
+
+
+/* ------------------------------------
+        18 := idee
+------------------------------------ */
+
+.idee{
+    margin: 1.5rem;
+    color: var(--bleu-fonce);
+    border-bottom: 1px solid #707070;
+}
+
+.idee h3{
+    font-size: 1.8rem;
+    color: var(--noir);
+}
+
+.idee figure{
+    margin-top: 1rem;
+}
+
+.idee figure img{
+    border-radius: 2rem;
+}
+
+.idee article{
+    width: 100%;
+    justify-content: space-around;
+}
+
+.fig{
+    width: 25%;
+    text-align: center;
+}
+
+.fig img{
+    width: 100%;
+}
+
+.idee h4{
+    font-size: 1.5rem;
+    font-weight: lighter;
+    margin-top: 2rem;
+}
+
+.idee p{
+    font-size: 1.1rem;
+    margin-top: 1.2rem;
+}
+
+.idee button{
+    margin: 2rem auto;
+}
+
+
+
+/* ------------------------------------
+        19 := accompagnement
+------------------------------------ */
+
+.accompagnement .prix figure{
+    margin-left: 30% !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+/************************ PAGE 4 *************************/
+
+/* ------------------------------------
+        20 := client
+------------------------------------ */
+#container1 section{
+    background-color: var(--blanc);
+    margin: 3rem 1.5rem;
+    border: 2px solid var(--noir);
+    border-radius: 2rem;
+    padding-bottom: 12rem;
+}
+
+.choix span{
+    width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.choix span + span{
+    border-left: 1px solid var(--noir);
+    border-bottom: 1px solid var(--noir);
+}
+
+.choix + figure{
+    width: 40%;
+    align-self: center;
+    margin: 3rem auto;
+}
+
+
+.connexion{
+    margin: 0 1.5rem 1rem 1.5rem;
+}
+
+.connexion input::placeholder{
+    text-align: start;
+}
+
+.connexion input[type = email], .connexion input[type = password]{
+    padding: .7rem;
+    border: 1px solid var(--bleu-fonce);
+}
+
+.connexion button{
+    border: none;
+    margin-bottom: 1.5rem;
+    padding: .8rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+    border-radius: 1.5rem;
+}
+
+.password{
+    height: 60px;
+}
+
+.password img{
+    position: relative;
+    left: 90%;
+    top: -2.8rem;
+}
+
+.password + article{
+    margin-bottom: .6rem;
+    color: var(--bleu-fonce);
+}
+
+.connexion p{
+    align-self: center;
+    margin-top: .4rem;
+    font-size: 1.2rem;
+    text-decoration: underline;
+    color: var(--bleu-fonce);
+    font-style: italic;
+}
+
+
+.ou{
+    margin: 1rem;
+}
+
+.ou div{
+    width: 40%;
+    height: 0px;
+    border: 0.9px solid var(--bleu-fonce);
+    align-self: center;
+    opacity: .7;
+}
+
+.ou span{
+    width: 20%;
+    text-align: center;
+}
+
+
+.fb{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 58px;
+}
+
+.fb button{
+    width: 100%;
+    border-radius: 2rem;
+    background-color: var(--blanc);
+}
+
+.fb button a{
+    color: var(--noir);
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem;
+}
+
+.fb img{
+    position: relative;
+    left: 12%;
+    top: 2.2rem;
+    width: 6%;
+}
+
+
+
+
+
